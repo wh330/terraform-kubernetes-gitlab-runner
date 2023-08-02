@@ -201,8 +201,8 @@ variable "manager_node_selectors" {
 
 variable "manager_node_tolerations" {
   description = "A map of node tolerations to apply to the pods as defined https://docs.gitlab.com/runner/executors/kubernetes.html#other-configtoml-settings"
-  default     = {}
-  type        = map(string)
+  default     = []
+  type        = list(map(string))
 }
 
 variable "manager_pod_labels" {
