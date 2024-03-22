@@ -1,6 +1,7 @@
 locals {
   config = <<EOF
 [[runners]]
+  output_limit = 10000000
 %{if var.cache.type == "local"~}
   cache_dir = "${var.local_cache_dir}"
 %{~else~}
