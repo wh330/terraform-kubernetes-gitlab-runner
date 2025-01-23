@@ -8,6 +8,7 @@ resource "helm_release" "gitlab_runner" {
   version          = var.chart_version
   create_namespace = var.create_namespace
   atomic           = var.atomic
+  timeout          = var.timeout
 
   values = [
     yamlencode({

@@ -315,3 +315,8 @@ variable "container_poll_timeout" {
   default = 180
 }
 
+variable "timeout" {
+  description = "Helm install timeout"
+  type        = number
+  default     = 900 # 15 minutes
+}
