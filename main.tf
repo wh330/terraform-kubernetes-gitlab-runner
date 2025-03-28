@@ -31,6 +31,7 @@ resource "helm_release" "gitlab_runner" {
         tags        = var.runner_tags
         locked      = var.runner_locked
         config      = local.config
+        secret      = var.runners_secret
 
         cache = {
           secretName = local.cache_secret_name

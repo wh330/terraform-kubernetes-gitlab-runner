@@ -233,6 +233,11 @@ variable "additional_secrets" {
   default     = []
 }
 
+variable "runners_secret" {
+  type    = string
+  default = "foo"
+}
+
 variable "replicas" {
   description = "the number of manager pods to create"
   type        = number
