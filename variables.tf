@@ -3,10 +3,20 @@ variable "namespace" {
   default = "gitlab-runner"
 }
 
+variable "runner_image_registry" {
+  default = "registry.gitlab.com"
+  type    = string
+}
+
 variable "runner_image" {
   description = "The docker gitlab runner version. https://hub.docker.com/r/gitlab/gitlab-runner/tags/"
   default     = null
   type        = string
+}
+
+variable "runner_image_tag" {
+  default = null
+  type    = string
 }
 
 variable "create_namespace" {
@@ -305,14 +315,14 @@ variable "build_job_requests" {
 
 variable "container_poll_interval" {
   description = "How frequently, in seconds, the runner will poll the Kubernetes pod it has just created to check its status"
-  type = number
-  default = 3
+  type        = number
+  default     = 3
 }
 
 variable "container_poll_timeout" {
   description = "The amount of time in seconds attempting to connect to the created container"
-  type = number
-  default = 180
+  type        = number
+  default     = 180
 }
 
 variable "timeout" {
